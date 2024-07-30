@@ -1,0 +1,88 @@
+Insect Name,Start Period,End Period,Region,Crop Affected,Severity
+Desert Locust,January,March,Northern Kenya,Maize; Sorghum,High
+Fall Armyworm,February,May,Rift Valley,Maize; Wheat,Medium
+African Bollworm,October,December,Coastal Region,Cotton; Tomatoes,High
+Red Locust,July,September,Western Kenya,Rice; Sugarcane,Medium
+Banana Weevil,March,June,Central Kenya,Bananas,High
+Coffee Berry Borer,May,August,Central Kenya,Coffee,High
+Stemborer,April,July,Eastern Kenya,Maize; Sorghum,Medium
+Mango Fruit Fly,November,February,Coastal Region,Mangoes,High
+Tomato Leaf Miner,August,November,Rift Valley,Tomatoes,Medium
+Maize Stalk Borer,March,June,Western Kenya,Maize,Medium
+Cabbage Aphid,April,August,Central Kenya,Cabbage,Medium
+Sweet Potato Weevil,September,December,Western Kenya,Sweet Potato,High
+Passion Fruit Woodiness Virus,February,April,Coastal Region,Passion Fruit,High
+Citrus Mealybug,March,June,Eastern Kenya,Citrus,Medium
+Cassava Mealybug,May,July,Western Kenya,Cassava,High
+Pigeon Pea Pod Borer,August,October,Northern Kenya,Pigeon Pea,Medium
+African Black Beetle,June,September,Rift Valley,Potato,High
+Groundnut Leaf Miner,January,March,Western Kenya,Groundnut,Medium
+Green Peach Aphid,February,May,Central Kenya,Peach,High
+Coconut Rhinoceros Beetle,July,October,Coastal Region,Coconut,High
+Sorghum Midge,September,November,Northern Kenya,Sorghum,Medium
+Pineapple Mealybug,November,February,Coastal Region,Pineapple,Medium
+Avocado Thrips,April,June,Rift Valley,Avocado,Medium
+Onion Thrips,May,August,Eastern Kenya,Onion,High
+Spinach Leaf Miner,June,September,Central Kenya,Spinach,Medium
+Beet Armyworm,March,May,Rift Valley,Beetroot,Medium
+Papaya Mealybug,August,October,Coastal Region,Papaya,High
+Millet Head Miner,November,January,Western Kenya,Millet,Medium
+Okra Fruit and Shoot Borer,February,April,Northern Kenya,Okra,High
+Barley Stem Sawfly,April,June,Rift Valley,Barley,Medium
+Fennel Aphid,July,September,Central Kenya,Fennel,Medium
+Garlic Thrips,October,December,Eastern Kenya,Garlic,High
+Watermelon Fruit Fly,January,March,Coastal Region,Watermelon,Medium
+Pumpkin Beetle,February,April,Western Kenya,Pumpkin,High
+Kale Whitefly,March,May,Central Kenya,Kale,Medium
+Sunflower Moth,April,June,Rift Valley,Sunflower,High
+Strawberry Leaf Roller,June,August,Eastern Kenya,Strawberry,Medium
+Turnip Root Fly,July,September,Central Kenya,Turnip,Medium
+Broccoli Aphid,August,October,Rift Valley,Broccoli,High
+Zucchini Fruit Fly,October,December,Western Kenya,Zucchini,Medium
+Parsley Worm,November,January,Central Kenya,Parsley,Medium
+Radish Leaf Miner,January,March,Eastern Kenya,Radish,Medium
+Coriander Aphid,February,April,Coastal Region,Coriander,Medium
+Basil Downy Mildew,March,May,Rift Valley,Basil,High
+Thyme Spider Mite,April,June,Central Kenya,Thyme,Medium
+Rosemary Beetle,June,August,Eastern Kenya,Rosemary,High
+Sage Leafhopper,July,September,Western Kenya,Sage,Medium
+Leek Moth,September,November,Central Kenya,Leek,High
+Chive Thrips,November,January,Rift Valley,Chive,Medium
+Dill Aphid,December,February,Eastern Kenya,Dill,Medium
+Parsley Leaf Miner,February,April,Central Kenya,Parsley,Medium
+Pumpkin Aphid,March,May,Coastal Region,Pumpkin,High
+Mint Rust,May,July,Western Kenya,Mint,Medium
+Celery Leaf Miner,July,September,Central Kenya,Celery,Medium
+Cabbage Root Fly,September,November,Rift Valley,Cabbage,High
+Carrot Weevil,October,December,Eastern Kenya,Carrot,Medium
+Cauliflower Aphid,December,February,Central Kenya,Cauliflower,Medium
+Asparagus Beetle,January,March,Western Kenya,Asparagus,High
+Pea Leaf Weevil,March,May,Rift Valley,Pea,Medium
+Chilli Thrips,May,July,Eastern Kenya,Chilli,High
+Ginger Root Maggot,July,September,Central Kenya,Ginger,Medium
+Lettuce Aphid,September,November,Coastal Region,Lettuce,Medium
+Mustard Aphid,November,January,Western Kenya,Mustard,High
+Parsnip Canker,February,April,Central Kenya,Parsnip,Medium
+Squash Bug,April,June,Eastern Kenya,Squash,High
+Cucumber Beetle,June,August,Rift Valley,Cucumber,Medium
+Eggplant Leaf Miner,August,October,Central Kenya,Eggplant,High
+Artichoke Plume Moth,October,December,Coastal Region,Artichoke,Medium
+Chard Leaf Miner,December,February,Western Kenya,Chard,Medium
+Beetroot Aphid,February,April,Rift Valley,Beetroot,High
+Brussels Sprout Aphid,April,June,Central Kenya,Brussels Sprout,Medium
+Collard Leaf Miner,June,August,Eastern Kenya,Collard,High
+Endive Aphid,August,October,Western Kenya,Endive,Medium
+Kohlrabi Root Maggot,October,December,Central Kenya,Kohlrabi,Medium
+Sorrel Aphid,December,February,Rift Valley,Sorrel,Medium
+Turnip Leaf Miner,February,April,Eastern Kenya,Turnip,High
+Rhubarb Curculio,April,June,Central Kenya,Rhubarb,Medium
+Kale Whitefly,June,August,Western Kenya,Kale,High
+Swiss Chard Leaf Miner,August,October,Rift Valley,Swiss Chard,Medium
+Radicchio Root Maggot,October,December,Eastern Kenya,Radicchio,Medium
+Celeriac Aphid,December,February,Central Kenya,Celeriac,High
+Fennel Root Maggot,February,April,Western Kenya,Fennel,Medium
+Lemongrass Aphid,April,June,Rift Valley,Lemongrass,High
+Spinach Leaf Miner,June,August,Central Kenya,Spinach,Medium
+Arugula Flea Beetle,August,October,Eastern Kenya,Arugula,High
+Watercress Leaf Miner,October,December,Coastal Region,Watercress,Medium
+Lovage Aphid,December,February,Western Kenya,Lovage,High

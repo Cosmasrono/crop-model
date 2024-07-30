@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crop Recommendation System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2, h3 { color: #333; }
+        .container { max-width: 1200px; }
+        .card { margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .table { margin-top: 20px; }
+        .table th, .table td { text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">AI Crop Recommendation System</h1>
+        
+        <form method="post" class="form">
+            <div class="form-group">
+                <label for="N">Nitrogen (kg/ha):</label>
+                <input type="range" id="N" name="N" min="0" max="150" value="20" step="1" class="form-control-range">
+                <output for="N" id="N_output">20</output>
+            </div>
+            
+            <div class="form-group">
+                <label for="P">Phosphorus (kg/ha):</label>
+                <input type="range" id="P" name="P" min="0" max="150" value="20" step="1" class="form-control-range">
+                <output for="P" id="P_output">20</output>
+            </div>
+            
+            <div class="form-group">
+                <label for="K">Potassium (kg/ha):</label>
+                <input type="range" id="K" name="K" min="0" max="200" value="40" step="1" class="form-control-range">
+                <output for="K" id="K_output">40</output>
+            </div>
+            
+            <div class="form-group">
+                <label for="temperature">Temperature (°C):</label>
+                <input type="range" id="temperature" name="temperature" min="0" max="50" value="25" step="1" class="form-control-range">
+                <output for="temperature" id="temperature_output">25</output>
+            </div>
+            
+            <div class="form-group">
+                <label for="humidity">Humidity (%):</label>
+                <input type="range" id="humidity" name="humidity" min="0" max="100" value="60" step="1" class="form-control-range">
+                <output for="humidity" id="humidity_output">60</output>
+            </div>
+            
+            <div class="form-group">
+                <label for="ph">pH:</label>
+                <input type="range" id="ph" name="ph" min="0" max="14" value="6" step="0.1" class="form-control-range">
+                <output for="ph" id="ph_output">6</output>
+            </div>
+            
+            <div class="form-group">
+                <label for="rainfall">Rainfall (mm):</label>
+                <input type="range" id="rainfall" name="rainfall" min="10" max="300" value="100" step="1" class="form-control-range">
+                <output for="rainfall" id="rainfall_output">100</output>
+            </div>
+            
+            <div class="form-group">
+                <label for="soil_type">Soil Type:</label>
+                <select id="soil_type" name="soil_type" class="form-control">
+                    <option value="Sandy">Sandy</option>
+                    <option value="Loamy">Loamy</option>
+                    <option value="Clay">Clay</option>
+                    <option value="Silty">Silty</option>
+                    <option value="Peaty">Peaty</option>
+                    <option value="Chalky">Chalky</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Recommend Crops</button>
+        </form>
+        
+        {% if recommendations %}
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Recommendations:</h2>
+                    <p>Recommended Crops: {{ recommendations | join(', ') }}</p>
+                </div>
+            </div>
+        {% endif %}
+        
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Additional Information:</h2>
+                
+                <h3>Most Affected Crops</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Risk Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for crop, risk in most_affected_crops.items() %}
+                            <tr>
+                                <td>{{ crop }}</td>
+                                <td>{{ risk }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                <h3>Region Severity</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Region</th>
+                            <th>Average Severity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for region, severity in region_severity.items() %}
+                            <tr>
+                                <td>{{ region }}</td>
+                                <td>{{ severity }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                <h3>Insect Counts</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Insect Name</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for insect, count in insect_counts.items() %}
+                            <tr>
+                                <td>{{ insect }}</td>
+                                <td>{{ count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('input[type="range"]').forEach(input => {
+            const output = document.querySelector(`#${input.id}_output`);
+            output.value = input.value;
+            input.addEventListener('input', () => output.value = input.value);
+        });
+    </script>
+</body>
+</html>
