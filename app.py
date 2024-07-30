@@ -9,8 +9,8 @@ import requests
 app = Flask(__name__)
 
 # Load datasets
-agricultural_dataset = pd.read_csv('/home/cosmas/Desktop/flaski/data/agricultural_dataset.csv')
-insect_dataset = pd.read_csv('/home/cosmas/Desktop/flaski/data/period.csv')
+agricultural_dataset = pd.read_csv('data/agricultural_dataset.csv')
+insect_dataset = pd.read_csv('data/period.csv')
 
 # Prepare agricultural dataset
 agricultural_dataset['soil_type'] = np.nan
