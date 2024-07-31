@@ -1,12 +1,10 @@
 import numpy as np
 import pandas as pd
-from flask import Flask, render_template, request
+import streamlit as st
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from geopy.geocoders import Nominatim
 import requests
-
-app = Flask(__name__)
 
 # Load datasets
 agricultural_dataset = pd.read_csv('data/agricultural_dataset.csv')
@@ -15,7 +13,8 @@ insect_dataset = pd.read_csv('data/period.csv')
 # Check if dataset columns align with expected columns
 expected_columns = ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall', 'label']
 if not all(column in agricultural_dataset.columns for column in expected_columns):
-    raise ValueError(f"agricultural_dataset.csv should contain columns: {expected_columns}")
+    st.error(f"agricultural_dataset.csv should contain columns: {expected_columns}")
+    st.stop()
 
 # Prepare agricultural dataset
 # Fill missing values and encode the soil type
@@ -100,42 +99,55 @@ def recommend_crops(N, P, K, temperature, humidity, ph, rainfall, soil_type):
     
     return recommendations, crop_risk
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        # Parse form data
-        N = float(request.form['N'])
-        P = float(request.form['P'])
-        K = float(request.form['K'])
-        temperature = float(request.form['temperature'])
-        humidity = float(request.form['humidity'])
-        ph = float(request.form['ph'])
-        rainfall = float(request.form['rainfall'])
-        soil_type = request.form['soil_type']
-        
-        # Get recommendations and crop risks
-        recommendations, crop_risk = recommend_crops(N, P, K, temperature, humidity, ph, rainfall, soil_type)
-        
-        # Calculate most affected crops and region severity
-        most_affected_crops = crop_risk.tail(5)
-        region_severity = insect_dataset.groupby('Region')['Severity_Encoded'].mean().sort_values(ascending=False)
-        insect_counts = insect_dataset['Insect Name'].value_counts()
-        
+# Streamlit app
+st.title("Crop Recommendation System")
+
+# Input fields for user input
+N = st.number_input("Nitrogen Content (N)", min_value=0.0, max_value=300.0, step=1.0)
+P = st.number_input("Phosphorus Content (P)", min_value=0.0, max_value=300.0, step=1.0)
+K = st.number_input("Potassium Content (K)", min_value=0.0, max_value=300.0, step=1.0)
+temperature = st.number_input("Temperature (°C)", min_value=-10.0, max_value=50.0, step=0.1)
+humidity = st.number_input("Humidity (%)", min_value=0.0, max_value=100.0, step=0.1)
+ph = st.number_input("pH Level", min_value=0.0, max_value=14.0, step=0.1)
+rainfall = st.number_input("Rainfall (mm)", min_value=0.0, max_value=500.0, step=1.0)
+soil_type = st.selectbox("Soil Type", options=soil_types)
+
+if st.button("Get Crop Recommendations"):
+    # Get recommendations and crop risks
+    recommendations, crop_risk = recommend_crops(N, P, K, temperature, humidity, ph, rainfall, soil_type)
+    
+    # Display recommendations
+    st.subheader("Crop Recommendations")
+    for crop, pests_info in recommendations.items():
+        st.write(f"Crop: {crop}")
+        if not pests_info.empty:
+            st.write(pests_info)
+        else:
+            st.write("No pest information available.")
+
+    # Display crop risk information
+    st.subheader("Crop Risk Levels")
+    st.table(crop_risk)
+
+    # Calculate most affected crops and region severity
+    most_affected_crops = crop_risk.tail(5)
+    region_severity = insect_dataset.groupby('Region')['Severity_Encoded'].mean().sort_values(ascending=False)
+    insect_counts = insect_dataset['Insect Name'].value_counts()
+
+    st.subheader("Most Affected Crops")
+    if not most_affected_crops.empty:
+        st.table(most_affected_crops)
     else:
-        # Provide default values for the variables to be rendered when method is GET
-        recommendations = {}
-        most_affected_crops = pd.Series(dtype='float64')
-        region_severity = pd.Series(dtype='float64')
-        insect_counts = pd.Series(dtype='int64')
+        st.write("No data available.")
 
-    # Render template with context
-    return render_template(
-        'index.html',
-        recommendations=recommendations,
-        most_affected_crops=most_affected_crops,
-        region_severity=region_severity.head(),
-        insect_counts=insect_counts.head()
-    )
+    st.subheader("Region Severity")
+    if not region_severity.empty:
+        st.table(region_severity.head())
+    else:
+        st.write("No data available.")
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    st.subheader("Insect Counts")
+    if not insect_counts.empty:
+        st.table(insect_counts.head())
+    else:
+        st.write("No data available.")
