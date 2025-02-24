@@ -10,10 +10,10 @@ import streamlit as st
 
 # Database configuration
 db_config = {
-    'host': 'localhost',
-    'user': 'limo',
-    'password': 'cosmas',
-    'database': 'limo'
+    'host': st.secrets["db_host"],
+    'user': st.secrets["db_username"],
+    'password': st.secrets["db_password"],
+    'database': st.secrets["db_name"]
 }
 
 # Load datasets
@@ -202,10 +202,17 @@ def show_prediction_page():
                 st.error("Unable to make prediction. Please try again.")
 
 def init_connection():
-    return mysql.connector.connect(**db_config)
+    try:
+        return mysql.connector.connect(**db_config)
+    except mysql.connector.Error as e:
+        st.error(f"Database connection failed. Please check your database settings.")
+        return None
 
 def create_user(username, password):
     conn = init_connection()
+    if not conn:
+        return False
+    
     cursor = conn.cursor()
     try:
         password_hash = generate_password_hash(password)
@@ -214,7 +221,7 @@ def create_user(username, password):
         conn.commit()
         return True
     except Exception as e:
-        st.error(f"Error: {e}")
+        st.error("Registration failed. Username might already exist.")
         return False
     finally:
         cursor.close()
@@ -222,12 +229,18 @@ def create_user(username, password):
 
 def login_user(username, password):
     conn = init_connection()
+    if not conn:
+        return False
+    
     cursor = conn.cursor(dictionary=True)
     try:
         cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
         user = cursor.fetchone()
         if user and check_password_hash(user['password_hash'], password):
             return True
+        return False
+    except Exception as e:
+        st.error("Login failed. Please try again.")
         return False
     finally:
         cursor.close()
