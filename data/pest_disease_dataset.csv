@@ -1,0 +1,34 @@
+Crop,Pest_Disease_Name,Type,Severity,Symptoms,Control_Measures,Optimal_Conditions
+rice,Brown Plant Hopper,Pest,High,Yellowing of leaves; stunted growth; honeydew secretion leading to sooty mold,Use resistant varieties; maintain field hygiene; biological control with natural predators; avoid excessive nitrogen,High humidity (>80%); temperatures 25-30°C
+rice,Rice Blast,Disease,High,Diamond-shaped lesions on leaves; neck rot; panicle damage,Use disease-resistant varieties; balanced fertilization; fungicide application when necessary; proper spacing,High humidity; temperatures 20-30°C; prolonged leaf wetness
+rice,Bacterial Leaf Blight,Disease,High,Yellow to white lesions along leaf margins; wilting; drying of leaves,Use resistant varieties; balanced fertilization; avoid excess nitrogen; proper water management,High temperature (25-34°C); high humidity
+rice,Stem Borer,Pest,Medium,Dead hearts in vegetative stage; white heads in reproductive stage,Early planting; synchronized planting; removal of stubbles; biological control,Moderate to high humidity; temperatures 20-30°C
+maize,Fall Armyworm,Pest,High,Ragged leaf feeding; damage to whorl and ear; frass present,Timely planting; natural enemies; targeted insecticide application; transgenic varieties,Warm temperatures (20-30°C); moderate humidity
+maize,Common Rust,Disease,Medium,Small brown pustules on leaves; reduced photosynthesis,Plant resistant hybrids; fungicide application; crop rotation,Cool temperatures (16-25°C); high humidity
+maize,Northern Leaf Blight,Disease,High,Long elliptical gray-green lesions; leaf necrosis,Resistant hybrids; fungicide application; crop rotation; residue management,Moderate temperatures (18-27°C); extended leaf wetness
+chickpea,Pod Borer,Pest,High,Holes in pods; damaged seeds; webbing on pods,Pheromone traps; biological control; need-based insecticide use,Warm and dry conditions
+chickpea,Fusarium Wilt,Disease,High,Yellowing and wilting of plants; brown discoloration of roots,Use resistant varieties; seed treatment; crop rotation; soil solarization,Soil temperatures 20-25°C; moisture stress
+wheat,Wheat Rust,Disease,High,Orange-brown pustules on leaves and stems; reduced grain filling,Resistant varieties; fungicide application; early sowing,Cool humid conditions; temperatures 15-22°C
+wheat,Aphids,Pest,Medium,Yellowing leaves; stunted growth; honeydew secretion,Natural enemies; need-based insecticide use; avoid excess nitrogen,Cool temperatures (15-25°C); moderate humidity
+potato,Late Blight,Disease,High,Dark brown water-soaked lesions; white fungal growth,Resistant varieties; fungicide application; proper spacing; field sanitation,Cool temperatures (10-20°C); high humidity
+potato,Colorado Potato Beetle,Pest,High,Defoliation; reduced tuber size; complete plant destruction,Crop rotation; biological control; insecticide resistance management,Warm temperatures (20-25°C); dry conditions
+tomato,Tomato Leaf Miner,Pest,High,Leaf mining; fruit boring; blistering of leaves,Pheromone traps; biological control; protected cultivation,Warm temperatures (20-30°C); moderate humidity
+tomato,Early Blight,Disease,Medium,Dark brown lesions with concentric rings; leaf yellowing,Resistant varieties; fungicide application; proper spacing,Warm temperatures (24-29°C); high humidity
+soybean,Soybean Rust,Disease,High,Small brown lesions on leaves; premature defoliation,Resistant varieties; fungicide application; early planting,Temperatures 15-28°C; prolonged leaf wetness
+soybean,Bean Leaf Beetle,Pest,Medium,Holes in leaves; pod scarring; reduced yield,Crop rotation; early planting; insecticide application,Warm temperatures (20-30°C); moderate humidity
+cotton,Bollworm,Pest,High,Damaged squares and bolls; holes in bolls; shedding,Bt cotton; IPM approach; pheromone traps; biological control,Warm temperatures (25-35°C); moderate humidity
+cotton,Bacterial Blight,Disease,High,Angular leaf spots; black lesions on bolls,Resistant varieties; clean seed; crop rotation; balanced fertilization,Warm temperatures (25-30°C); high humidity
+groundnut,Leaf Spot Disease,Disease,Medium,Circular brown spots on leaves; defoliation,Resistant varieties; fungicide application; crop rotation,Warm temperatures (25-30°C); high humidity
+groundnut,White Grub,Pest,High,Root damage; wilting; plant death,Soil treatment; crop rotation; light traps; biocontrol agents,Moist soil conditions; temperatures 25-30°C
+sugarcane,Sugarcane Borer,Pest,High,Dead hearts; tunneling in stalks; reduced yield,Release of parasitoids; clean cultivation; resistant varieties,Warm temperatures (25-35°C); high humidity
+sugarcane,Red Rot,Disease,High,Red discoloration inside stalk; wilting; drying,Disease-free seed; resistant varieties; hot water treatment,Temperatures 25-30°C; high humidity
+mango,Mango Hopper,Pest,High,Leaf damage; flower drop; reduced fruit set,Pruning for ventilation; insecticide sprays; orchard sanitation,Warm temperatures (25-35°C); low humidity
+mango,Anthracnose,Disease,High,Black spots on fruits; flower blight; leaf spots,Fungicide sprays; orchard sanitation; proper pruning,Warm temperatures (20-30°C); high humidity
+banana,Panama Disease,Disease,High,Yellowing of leaves; stem splitting; plant death,Clean planting material; resistant varieties; soil treatment,Warm temperatures (25-30°C); high soil moisture
+banana,Banana Weevil,Pest,High,Tunneling in corm; plant toppling; reduced yield,Clean planting material; trap crops; biological control,Warm temperatures (20-30°C); moist conditions
+onion,Thrips,Pest,High,Silvery patches on leaves; distorted growth; reduced bulb size,Regular monitoring; insecticide rotation; proper irrigation,Warm dry conditions; temperatures 25-35°C
+onion,Purple Blotch,Disease,Medium,Purple lesions on leaves; leaf dieback,Fungicide application; proper spacing; field sanitation,Moderate temperatures (20-25°C); high humidity
+carrot,Carrot Fly,Pest,Medium,Tunnels in roots; wilting; reddish-brown discoloration,Crop rotation; delayed sowing; physical barriers,Cool temperatures (15-20°C); moist soil
+carrot,Alternaria Leaf Blight,Disease,Medium,Dark brown spots on leaves; leaf death,Resistant varieties; fungicide sprays; proper spacing,Warm temperatures (20-28°C); leaf wetness
+pea,Pea Aphid,Pest,Medium,Stunted growth; leaf curling; reduced pod formation,Natural enemies; insecticidal soaps; proper spacing,Cool temperatures (15-20°C); moderate humidity
+pea,Powdery Mildew,Disease,Medium,White powdery growth on leaves; reduced yield,Resistant varieties; fungicide application; proper spacing,Moderate temperatures (18-25°C); dry conditions 
